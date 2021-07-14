@@ -14,17 +14,7 @@ exports.importarLista = file => {
   const fileContents = fs.readFileSync(file.path);
   dadosUltimoArquivo = fileContents;
 
-  debugger;
-  console.log(fileContents);
-  debugger;
-  
-  let fileArray;
-  try {
-    fileArray = JSON.parse(fileContents);
-  } catch(error) {
-    throw new Error("Não consegui fazer a interpretação do arquivo, favor usar formato json");
-  }
-
+  const fileArray = JSON.parse(fileContents);
   fs.unlinkSync(file.path);
 
   servicosModel.adicionarItens(fileArray);
