@@ -20,8 +20,8 @@ router.post('/', upload.single('certidao_nascimento'),  function(req, res) {
 router.get('/download-lista', (req, res) => {
   res.header('Content-Disposition', 'inline');
   res.header('Content-Disposition', 'attachment');
-  res.header('Content-Disposition', 'attachment; filename="lista-servico.json');
-  res.end(servicosController.ultimoArquivo);
+  res.header('Content-Disposition', 'attachment; filename="lista-servico.json"');
+  res.end(servicosController.ultimoArquivo());
 });
 
 module.exports = router;
