@@ -7,5 +7,14 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <h1>Lista</h1>
+    <pre><%=JSON.stringify(lista, null, 2)%></pre>
+    <a href="/download-lista">Baixar lista</a>
+    
+    <form method="POST" enctype="multipart/form-data">
+      Arquivo: <input type="file" name="certidao_nascimento"><br>
+      <input type="submit" value="Enviar">
+    </form>
   </body>
 </html>
