@@ -25,7 +25,9 @@ exports.importarLista = file => {
     throw new Error("Não consegui fazer a interpretação do arquivo, favor usar formato json");
   }
 
+  fs.unlinkSync(file.path);
+
   servicosModel.adicionarItens(fileArray);
 }
 
-exports.ultimoArquivo = () => dadosUltimoArquivo;
+exports.ultimoArquivo = () => JSON.stringify(servicosModel.retornarLista(), null, 2);
